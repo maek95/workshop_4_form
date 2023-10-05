@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+
+    <!-- icon on the tab? -->
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/static/common/img/nordea_pulse.svg"
+    />
+
+    <!-- fonts linked on nordea page (inspect element)-->
+    <link
+      href="/static/dotxx2017/assets/fonts/NordeaSansLarge-Medium.woff2?v=3.77.6"
+      rel="preload"
+      as="font"
+      crossorigin=""
+    />
+    <link
+      href="/static/dotxx2017/assets/fonts/NordeaSansLarge-Regular.woff2?v=3.77.6"
+      rel="preload"
+      as="font"
+      crossorigin=""
+    />
+    <link
+      href="/static/dotxx2017/assets/fonts/NordeaSansSmall-Medium.woff2?v=3.77.6"
+      rel="preload"
+      as="font"
+      crossorigin=""
+    />
+    <link
+      href="/static/dotxx2017/assets/fonts/NordeaSansSmall-Regular.woff2?v=3.77.6"
+      rel="preload"
+      as="font"
+      crossorigin=""
+    />
+    <title>Nordea formulär</title>
+    <!-- trying to replicate NORDEA's form (customer support):
+  https://www.nordea.se/privat/kundservice/synpunkter-och-forslag.html 
+
+    Different layout when maximed browser!
+
+  OBS! I will add radio-buttons / checkboxes which is not on this page originally... 
+  AND a username + password box instead of 'Name'
+-->
+  </head>
+  <body>
+    <header class="header-section">
+      <!-- fixed/sticky header? -->
+      <div class="header-top">
+        <div class="logo-and-nav-container">
+          <div class="logo-container">
+            <img
+              class="logo-img-header"
+              src="images/nordea-Bank-Logo.png"
+              alt=""
+            />
+          </div>
+          <div class="site-redirect-container">
+            <ul class="site-redirect">
+              <li><a href="">Privat</a></li>
+              <li><a href="">Företag</a></li>
+              <li><a href="">Private Banking</a></li>
+            </ul>
+          </div>
+          <button class="loginButton">Logga in</button>
+        </div>
+      </div>
+      <div class="header-bottom"></div>
+    </header>
+
+    <main>
+      <div class="sidebar">
+        <!-- fixed/sticky in the bottom right? -->
+      </div>
+
+      <div class="h1-container row">
+        <h1>Synpunkter och förslag</h1>
+      </div>
+      <!-- padding-left: 1.25rem;
+    padding-right: 1.25rem; -->
+
+      <section class="form-section">
+        <!-- 'action' where I want to send data -->
+        <div class="row">
+          <div class="form-container">
+            <form
+              class="form"
+              action="http://httpbin.org/anything"
+              method="post"
+            >
+              <div class="article">
+                <h2>Lämna synpunkter och förslag</h2>
+                <p>Använd formuläret för att berätta för oss vad du tycker.</p>
+              </div>
+
+              <div class="name">
+                <label for="name">Namn *</label>
+                <input type="text" name="name" id="name" required/>
+              </div>
+              <div class="username"></div>
+              <div class="password"></div>
+              <div class="email"></div>
+              <div class="categorySelect-container"></div>
+              <div class="message"></div>
+              <div class="wordCount"></div>
+              <div class="checkbox-container"></div>
+              <div class="nav-integrity">
+                <nav>
+                  <a href="">Så behandlar vi personuppgifter</a>
+                </nav>
+              </div>
+
+              <div class="submitButton-container">
+                <button class="submitButton" type="submit">Skicka</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <div class="nav-share-icons-container"></div>
+    </main>
+
+    <section class="nav-section"></section>
+    <footer class="footer-section"></footer>
+  </body>
+</html>
