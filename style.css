@@ -5,18 +5,33 @@
 
 /* learned a lot usign 'inspect element' on the page I was replicating! */ 
 
+html {
+  font-size: 16px; /* what rem will be based! 1.0 rem is 100% (16px)... em is based on its immediate parent...? */
+  
+}
+
 body {
-  font-family: NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-family: "NordeaSansSmall-Regular",Arial,Helvetica Neue,Helvetica,sans-serif;
   font-weight: normal;
   line-height: 1.6;
   color: #000;
   background: #f4f2f1;
-  height: 1000px;
+  height: 1000px; /* remove... just want to see how it looks with scrolling*/
+
+  box-sizing: border-box;
+ /*  min-width: 16rem; */
+  min-width: 31.25rem;
 }
 
 main {
   padding: 15px;
-  padding-top: 6.75rem;
+ /*  padding-top: 6.75rem; */
+  padding-top: 3.375rem; /* then we can see header-bottom and h1 (in main) at the same time.*/ 
+
+  box-sizing: border-box;
+  /* min-width: 16rem; */
+  min-width: 31.25rem;
+
 }
 
 p {
@@ -24,30 +39,36 @@ p {
 }
 
 h1 {
-  /* same settings for h1 as on the website (when browser is maximized) https://www.nordea.se/privat/kundservice/synpunkter-och-forslag.html */
-  font-size:2.5rem; 
-  line-height: 1.075;
-  font-family: NordeaSansLarge,NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif;
-  font-weight: bold
+  font-size: 2.5rem; /* 2.5 * 16px = 40px */
+  line-height: 1.075em; /*17.2px*/
+/*   font-family: NordeaSansLarge,NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif; */
+  /* Nordea Sans Large Medium will be used, others are backups*/
+  font-family: "Nordea Sans Large Medium","NordeaSansSmall-Regular",Arial,Helvetica Neue,Helvetica,sans-serif;
+  /* NORDEA website sets font-weight to bold, but they use Nordea Sans Large Regular which I cant find! */
+  font-weight: normal;
 }
 
 .h1-container {
-  display: block;
+  /* display: block; */
 }
 
 h2 {
-  font-size: 2rem;
-  line-height: 1.075;
-  font-family: NordeaSansLarge,NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif;
-  font-weight: bold;
+  font-size: 2rem;  /* 2 * 16px = 32px */
+  line-height: 1.075em; 
+  /* font-family: NordeaSansLarge,NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif; */
+  font-family: "Nordea Sans Large Medium","NordeaSansSmall-Regular",Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-weight: normal;
 }
 
 a {
   text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
 }
 
 div {
-  display: block;
+/*   display: block; */
+  /* display: inline-block; */
 }
 
 ul li {
@@ -58,29 +79,35 @@ li {
   display: list-item; /* ?*/
 }
 
-.header-section {
-  background-color: lightpink;
+.header-top-section {
+  /* background-color: lightpink; */
+  background-color: #00005e;
   display: block;
-  height: 6.75rem;
+  /* height: 6.75rem; */
+  height: 3.375rem;
   position: absolute;
   z-index: 53; 
 
   width: 100%;
+  box-sizing: border-box;
+  /* min-width: 16rem; /* why is there still a gap to the far right?? */
+  min-width: 31.25rem;
 }
-
+/* 
 .header-top {
- background-color: lightgreen;
- height: 3.375rem;
-}
 
+ height: 3.375rem;
+ 
+}
+ */
 .logo-and-nav-container {
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
   max-width: 71.25rem;
   margin-left: auto;
   margin-right: auto;
 
   display: flex;
-  flex-direction: row;
+  flex-direction: row; 
 }
 
 .logo-container {
@@ -88,7 +115,7 @@ li {
   display: flex; /* can center image on small screens (see @media) */
   padding: 0 1.25rem;
   height: 3.375rem;
-  background-color: lightslategray;
+  /* background-color: lightslategray; */
 }
 
 .logo-img-header {
@@ -114,20 +141,46 @@ li {
 
 li > a {
   padding: 0 1rem;
+  color: #fcfcfc;
 
   /* Use this and we can remove code in .site-redirect: 'justify-content: center' and 'align-items: center' 
   And display: flex in .site-redirect-container. HOWEVER, when screen is small text will wrap 3.375rem down!*/
   /* line-height: 3.375rem; 
-  /* same measurement as header-top!*/
+  /* same measurement as header-top-section!*/
 }
 
-.loginButton {
+li {
+ position: relative; /* to add a 'position: absolute' blue line... */
+}
+
+.a-active-header-top {
+  color: #a6d1ff;
+}
+
+/* grabbed this from the Nordea website... but it's not perfect... they used ::before ?*/
+.blue-line-active-site {
+  content: '';  /* empty space, but gives the div "content" so it is visible */
+  height: 3px;
+  background: #a6d1ff;
+  position: absolute;
+  top: -55%; /* of its 'li'... on Nordea this was 'top: 0;'... */
+  width: 80%;
+  left: 10%;
+}
+
+.button {
   display: flex;
   height: 3.375rem;
   width: 8.4375rem;
-  flex-direction: row; /* if I want to add a "lås"-picture */
+  flex-direction: row; /* if I want to add a "lock"-picture */
   justify-content: center;
   align-items: center;
+  
+}
+
+.loginButton {
+  background-color: #40bfa3;
+  color: #00005e;
 }
 
 .row {
@@ -137,32 +190,150 @@ li > a {
   max-width: 71.25rem;
   margin-left: auto;
   margin-right: auto;
+  
+  box-sizing: border-box;
+ /*  min-width: 16rem; */
+  min-width: 31.25rem;
 }
 
-.header-bottom {
-  background-color: lightgray;
+/* on the real website this should be shown even when completely scrolled up. */
+.header-bottom-sticky {
+  background-color: #fcfcfc;
+  opacity: 0.85;
   height: 3.375rem;
+  width: 100%;
+ /*  min-width: 16rem; */
+  min-width: 31.25rem;
+
+
+  position: sticky; 
+  top: 0;
+/*   position: sticky; */
+ /*  bottom: 0;
+  top: 0; */
+}
+
+.header-bottom-nav-container {
+  max-width: 71.25rem;
+  margin-left: auto;
+  margin-right: auto;
+
+  display: flex;
+  flex-direction: row; 
+}
+
+.header-bottom-sticky a { 
+  color: black;
+}
+
+.searchButton {
+  display: flex;
+  height: 3.375rem;
+  width: 8.4375rem;
+  flex-direction: row; /* if I want to add a "lock"-picture */
+  justify-content: center;
+  align-items: center;
 }
 
 
 .form-section {
-  display: block;
+ /*  display: block; */
   background-color: lightgreen;
 }
 
 .form-container {
   background-color: lightslategray;
-  width: 66.66667%; /* of form-section which is capped at 71.25rem*/
-  float: left;
+  /* width: 66.66667%; /* of form-section which is capped at 71.25rem*/
+  width: 75%;
+
+  box-sizing: border-box;
+  /* min-width: 16rem; */
+  min-width: 31.25rem;
+
+  float: left; /* unnecessary? */
+  
+}
+
+.form-container form {
+  /* display: block; */
+/*   display: grid;
+  grid-template-columns: 48% 48%; 
+  gap: 15px;  */
+  
 }
 
 .form {
-  display: block;
+  display: grid;
+  /* grid-template-columns: 48% 48%; /* to give space for gap..?*/
+  grid-template-columns: minmax(7rem, 48%) minmax(7rem, 48%);
+  gap: 15px; 
+  background-color: teal;
+}
+
+.article {
+  background-color: yellowgreen;
+  /* grid-column-start: 1;
+  grid-column-end: 3; */
+
+  grid-column: span 2; /* does the same as above */
+}
+
+.firstName {
+  grid-column: 1;
+
+}
+
+.lastName {
+  grid-column: 2;
+}
+
+.category {
+  grid-column: 1;
+}
+
+.message {
+  grid-column: 1 / span 2; 
+ /*  grid-column: 1; */
+}
+
+.message > textarea {
+  display: block; /* take up its own line/block */
+  overflow-y: scroll;
+  min-height: 100px;
+}
+
+label {
+  /* inline-block instead of block because we don't want a break after the input element. */
+  display: inline-block; /* lets us use margin-bottom (which doesnt work with grid?)...  */
+  margin-bottom: 0.25rem; 
+  /* font size inherited from html (16px)...1.0rem*/
+}
+
+input, textarea {
+  width: 100%; /* of form-container*/
+  box-sizing: border-box; /* input boxes have borders by default it seems */
+  padding: 0.625rem 1.125rem; /* 0.625 * 16px = 10px... 1.125 * 16px = 18px */
+  /* font-family: NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif; */
+  font-family: "NordeaSansSmall-Regular",Arial,Helvetica Neue,Helvetica,sans-serif;
+  font-size: 1.125rem;
+  line-height: 1.6em;
+  font-weight: normal;
+  color: #000;
+  background-color: #fcfcfc;
+  outline: 1px solid #8b8a8d; /* border outline... */
+}
+
+small {
+  font-size: 1rem;
 }
 
 .submitButton-container {
   background-color: lightseagreen;
-  float: right; /* move to the right side of form-section */
+ /* float: right; /* doesnt work with grid? */
+  grid-column: 2;
+
+  display: flex;
+  justify-content: end; /* same as float: right; */
 
   /* below is not needed... for now?*/
   /* position: relative;
@@ -172,7 +343,7 @@ li > a {
 }
 
 .submitButton {
-  display: inline-flex;
+ /*  display: inline-flex;  */
   font-size: 1rem;
   line-height: 1.2rem;
   font-weight: bold;
@@ -189,17 +360,38 @@ li > a {
   /* add transition? visuals when you click... opacity... */
 }
 
+.nav-integrity-container {
+  /* start at column 1. Span two columns (column 1 and 2).*/
+  grid-column: 1 / span 2;
+}
+
 @media (max-width: 600px ) {
   li > a {
     font-size: 12px;
   }
   .loginButton {
     width: 5.4375rem;
-    
+  }
+}
+
+/*  https://www.w3schools.com/tags/ref_pxtoemconversion.asp */
+@media (max-width: 640px) { /* 40em * 16 = 640*/
+  .form-container {
+   /*  width: 83.33333%; */
+   width: 90%;
+  }
+}
+
+@media (max-width: 500px) {
+  label {
+    font-size: 0.87rem; /* so "Användernamn (email) * doesn't break to a new line */
+  }
+
+  p {
+    font-size: 15px;
   }
 
 }
-
 
 @media (max-width: 400px) {
   h1 {
@@ -213,26 +405,33 @@ li > a {
   }
   a {
     font-size: 14px;
+  } 
+/*   label {
+    font-size: 0.7rem;
+  } */
+  input, textarea {
+    font-size: 0.7rem;
+    padding: 0.3rem 0.4rem;
   }
-  .submitButton {
+  /* .submitButton {
     font-size: 0.8rem;
     padding: 0.28rem 1.15rem;
-  }
-  li > a {
+  } */
+  /* li > a {
     font-size: 8px;
-  }
-  .loginButton {
+  } */
+ /*  .loginButton {
     width: 2.4375rem;
     font-size: 10px;
-  }
-  .logo-container {
+  } */
+  /* .logo-container {
     width: 10%;
     justify-content: center;
     align-items: center;
-  }
-  .logo-img-header {
+  } */
+  /* .logo-img-header {
     width: 100%;
     height: auto;
     min-width: 2rem;
-  }
+  } */
 }

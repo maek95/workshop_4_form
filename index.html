@@ -13,64 +13,90 @@
     />
 
     <!-- fonts linked on nordea page (inspect element)-->
-    <link
+   <!--  <link
       href="/static/dotxx2017/assets/fonts/NordeaSansLarge-Medium.woff2?v=3.77.6"
       rel="preload"
       as="font"
       crossorigin=""
-    />
-    <link
+    /> -->
+
+    <!-- https://www.onlinewebfonts.com/download/769bcbdcfa75bb684c6b18613147d89b -->
+    <link href="https://db.onlinewebfonts.com/c/769bcbdcfa75bb684c6b18613147d89b?family=Nordea+Sans+Large+Medium" rel="stylesheet">
+
+    <!-- hittar ingen Regular -->
+   <!--  <link
       href="/static/dotxx2017/assets/fonts/NordeaSansLarge-Regular.woff2?v=3.77.6"
       rel="preload"
       as="font"
       crossorigin=""
-    />
-    <link
+    /> -->
+    
+    <!-- <link
       href="/static/dotxx2017/assets/fonts/NordeaSansSmall-Medium.woff2?v=3.77.6"
       rel="preload"
       as="font"
       crossorigin=""
-    />
-    <link
+    /> -->
+
+   <!--  <link
       href="/static/dotxx2017/assets/fonts/NordeaSansSmall-Regular.woff2?v=3.77.6"
       rel="preload"
       as="font"
       crossorigin=""
-    />
+    /> -->
+    <!-- https://www.onlinewebfonts.com/download/22bbdd53424bef8a0c11fde5ed420f5f -->
+    <link href="https://db.onlinewebfonts.com/c/22bbdd53424bef8a0c11fde5ed420f5f?family=NordeaSansSmall-Regular" rel="stylesheet">
     <title>Nordea formulär</title>
     <!-- trying to replicate NORDEA's form (customer support):
   https://www.nordea.se/privat/kundservice/synpunkter-och-forslag.html 
 
     Different layout when maximed browser!
 
-  OBS! I will add radio-buttons / checkboxes which is not on this page originally... 
+  OBS! I will add radio-buttons / checkboxes which is not on this page originally... AND USE GRID to easily place 'Efternamn *' input to the right of 'Namn *' input.
   AND a username + password box instead of 'Name'
 -->
   </head>
   <body>
-    <header class="header-section">
-      <!-- fixed/sticky header? -->
-      <div class="header-top">
+    <div class="header-top-section">
+     <!--  <div class="header-top"> -->
         <div class="logo-and-nav-container">
           <div class="logo-container">
             <img
               class="logo-img-header"
-              src="images/nordea-Bank-Logo.png"
+              src="images/nordea-Bank-Logo-screenshot.png"
               alt=""
             />
           </div>
           <div class="site-redirect-container">
             <ul class="site-redirect">
-              <li><a href="">Privat</a></li>
+              <li>
+                <div class="blue-line-active-site"></div>
+                <a class="a-active-header-top" href=""> 
+                Privat</a>
+              </li>
               <li><a href="">Företag</a></li>
               <li><a href="">Private Banking</a></li>
             </ul>
           </div>
-          <button class="loginButton">Logga in</button>
+          <button class="button loginButton">Logga in</button>
         </div>
+      <!-- </div> -->
+    </div>
+
+    <div class="header-bottom-sticky">
+      <div class="logo-and-nav-container">
+      <div class="site-redirect-container">
+        <ul class="site-redirect">
+          <li><a href="">Ditt liv</a></li>
+          <li><a href="">Våra tjänster</a></li>
+          <li><a class="a-active-sticky" href="">Kundservice</a></li>
+          <li><a href="">Bli kund</a></li>
+        </ul>
       </div>
-      <div class="header-bottom"></div>
-    </header>
+      <button class="button searchButton">Sök</button>
+    </div>
+    </div>
+
 
     <main>
       <div class="sidebar">
@@ -87,6 +113,7 @@
         <!-- 'action' where I want to send data -->
         <div class="row">
           <div class="form-container">
+            <!-- POST with sensitive info! -->
             <form
               class="form"
               action="http://httpbin.org/anything"
@@ -96,19 +123,49 @@
                 <h2>Lämna synpunkter och förslag</h2>
                 <p>Använd formuläret för att berätta för oss vad du tycker.</p>
               </div>
-
-              <div class="name">
-                <label for="name">Namn *</label>
-                <input type="text" name="name" id="name" required/>
+              <!--input types: https://www.w3schools.com/html/html_form_input_types.asp -->
+              <div class="firstName">
+                <label for="firstName">Namn *</label><br>
+                <input type="text" name="firstName" id="firstName" required/>
+                <!-- connected input and label with 'for' and 'id'. 'name' is sent with POST-->
               </div>
-              <div class="username"></div>
-              <div class="password"></div>
-              <div class="email"></div>
-              <div class="categorySelect-container"></div>
-              <div class="message"></div>
+              <div class="lastName">
+                <label for="lastName">Efternamn *</label><br>
+                <input type="text" name="lastName" id="lastName" required/>
+              </div>
+              <div class="username">
+                <label for="username">Användarnamn (email) *</label><br>
+                <input type="text" name="username" id="username" required>
+              </div>
+              <div class="password">
+                <label for="password">Lösenord *</label>
+                <!-- type="password" creates dots when typing! -->
+                <input type="password" name="password" id="password" required>
+              </div>
+              <div class="category">
+                <label for="categorySelect">Välj ditt kategori *</label>
+                <!-- drop-down menu -->
+                <select name="category" id="categorySelect" required>
+                  <option value="">
+                    Vänligen välj ett kategori
+                  </option>
+                  <option value="kreditkort-bankkort">Kreditkort/Bankkort</option>
+                  <option value="nätbanken">Nätbanken</option>
+                  <option value="mobilappen">Mobilappen</option>
+                  <option value="utlandsbetalningar">Utlandsbetalningar</option>
+                  <option value="annat">Annat</option>
+                </select>
+              </div>
+              <div class="message">
+                <label for="msg">Meddelande *</label>
+                <textarea name="message" id="msg" maxlength="5000" required></textarea>
+                <!-- Can use <small> if we want to make it clear that this should be smaller text... but to be honest I just set it to 1rem so I could have just placed a <div> here instead... -->
+                <!-- need javascript for wordcount? -->
+                <small>#/5&nbsp;000</small>
+              </div>
               <div class="wordCount"></div>
               <div class="checkbox-container"></div>
-              <div class="nav-integrity">
+              <div class="nav-integrity-container">
                 <nav>
                   <a href="">Så behandlar vi personuppgifter</a>
                 </nav>
