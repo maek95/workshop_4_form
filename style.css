@@ -16,7 +16,7 @@ body {
   line-height: 1.6;
   color: #000;
   background: #f4f2f1;
-  height: 1000px; /* remove... just want to see how it looks with scrolling*/
+  /* height: 1000px; /* remove... just want to see how it looks with scrolling*/
 
   box-sizing: border-box;
  /*  min-width: 16rem; */
@@ -69,6 +69,12 @@ a {
 div {
 /*   display: block; */
   /* display: inline-block; */
+}
+
+button:hover {
+  background-color: #000;
+  color: #fcfcfc;
+  border-color: #000;
 }
 
 ul li {
@@ -186,7 +192,7 @@ li {
 .row {
   margin-top: 10px;
   margin-bottom: 10px;
-  background-color: lightblue;
+/*   background-color: lightblue; */
   max-width: 71.25rem;
   margin-left: auto;
   margin-right: auto;
@@ -235,22 +241,28 @@ li {
   align-items: center;
 }
 
+/*  .loginButton:hover, .searchButton:hover {
+ } */
+
 
 .form-section {
  /*  display: block; */
-  background-color: lightgreen;
+ /*  background-color: lightgreen; */
 }
 
 .form-container {
-  background-color: lightslategray;
+  /* background-color: lightslategray; */
   /* width: 66.66667%; /* of form-section which is capped at 71.25rem*/
   width: 75%;
+  display: flex;
+  align-items: start;
+  justify-content: start;
 
   box-sizing: border-box;
   /* min-width: 16rem; */
   min-width: 31.25rem;
 
-  float: left; /* unnecessary? */
+  /* float: left; /* unnecessary? */
   
 }
 
@@ -263,15 +275,16 @@ li {
 }
 
 .form {
+  width: 100%;
   display: grid;
   /* grid-template-columns: 48% 48%; /* to give space for gap..?*/
   grid-template-columns: minmax(7rem, 48%) minmax(7rem, 48%);
   gap: 15px; 
-  background-color: teal;
+  /* background-color: teal; */
 }
 
 .article {
-  background-color: yellowgreen;
+/*   background-color: yellowgreen; */
   /* grid-column-start: 1;
   grid-column-end: 3; */
 
@@ -280,11 +293,12 @@ li {
 
 .firstName {
   grid-column: 1;
+  
 
 }
 
-.lastName {
-  grid-column: 2;
+.teleNr {
+  /* grid-column: 2; */
 }
 
 .category {
@@ -323,12 +337,62 @@ input, textarea {
   outline: 1px solid #8b8a8d; /* border outline... */
 }
 
+input [type="radio"] {
+ /*  width: 10px;
+  height: 10px; */
+}
+
+.contact-method, .checkboxes {
+ /*  grid-column: 1 / span 2; */
+  /* flex-direction: column; */
+  display: flex;
+  flex-direction: column;
+  grid-column: 1 / span 2; /* span 2 since we don't want anything else on this row anyway. */
+}
+
+/* input [type="radio"] */
+
+.radio-container {
+}
+
+.radio-container, .checkboxes-container {
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+  /* gap: 30px; */
+  padding-left: 30px;
+  max-width: 14rem;
+  margin-top: 0.25rem;
+}
+
+.checkboxes-container {
+}
+
+.radio-and-checkbox-style {
+  display: grid;
+  grid-template-columns: 1fr 0fr; /* button in the right column will take up as much space it requires */
+    
+ /*  gap: 30px; */
+  
+}
+
+.radio-and-checkbox-style label {
+ /* line-height: 1rem;  /* automatically makes the INPUT smaller??? */
+                      /* input will have same height */
+}
+
+.radio-and-checkbox-style input {
+  outline: 0;
+}
+
 small {
   font-size: 1rem;
 }
 
+.checkboxes {
+}
+
 .submitButton-container {
-  background-color: lightseagreen;
+  /* background-color: lightseagreen; */
  /* float: right; /* doesnt work with grid? */
   grid-column: 2;
 
@@ -340,6 +404,10 @@ small {
   display: inline-flex;
   justify-content: center;
   align-items: center; */
+}
+
+.submitButton-container {
+  grid-column: 1 / span 2;
 }
 
 .submitButton {
@@ -365,6 +433,98 @@ small {
   grid-column: 1 / span 2;
 }
 
+.nav-share-items-container {
+  /* same settings as .form-container */
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: start;
+ /*  background-color: lightslategray; */
+  /* width: 66.66667%; /* of form-section which is capped at 71.25rem*/
+  width: 75%;
+  box-sizing: border-box;
+  /* min-width: 16rem; */
+  min-width: 31.25rem;
+}
+
+.social-list-icons-container {
+  background-color: #f4f2f1;
+ /*  display: flex; */
+ /*  flex-direction: row; */
+  display: flex;
+  
+  padding: 0.5rem;
+  border-radius: 3.125rem;
+}
+
+.nav-share-items-container ul {
+  list-style: none;
+  display: flex;
+} 
+
+.nav-share-items-container a {
+  margin: 0;
+  padding: 0;  
+}
+
+.nav-share-items-container li {
+  /* margin-right: 6px; /* there is a margin on the right-most side which I can't remove... */
+}
+
+.li-mail-item {
+}
+
+.nav-share-items-container svg {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 1.5rem;
+  width: 1.5rem;
+  
+ /*  overflow: hidden; */
+  /* vertical-align: middle; */
+}
+
+.h2-small {
+  font-size: 1rem; /* 16px */
+  line-height: 1.2; /* 1.2 * 16px = 19.2px...? */
+  font-family: "NordeaSansSmall-Regular",Arial,Helvetica Neue,Helvetica,sans-serif; /* NordeaSansLarge-Medium is h2 default */
+  font-weight: bold;
+  margin-bottom: 16px;
+}
+
+.sidebar {
+  display: flex;
+  background-color: #dfedfc;
+  z-index: 51;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  flex-direction: column;
+  width: 95px;
+  /* height: auto; */
+  border-top-left-radius: 10px;
+}
+
+.sidebar a {
+  padding: 0.5rem;
+  display: flex;
+}
+
+.sidebar a:hover {
+  background-color: rgb(71, 71, 252);
+}
+
+.sidebar img {
+  width: 100%;
+}
+
+footer {
+ /*  clear: both; */
+  background: #00005e;
+  height: 100%;
+}
+
 @media (max-width: 600px ) {
   li > a {
     font-size: 12px;
@@ -379,6 +539,10 @@ small {
   .form-container {
    /*  width: 83.33333%; */
    width: 90%;
+  }
+
+  .sidebar {
+    width: 80px;
   }
 }
 
