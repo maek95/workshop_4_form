@@ -5,15 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
 
-    <!-- icon on the tab? -->
+    <!-- icon on the tab? not sure how to add it properly though -->
     <link
       rel="icon"
       type="image/svg+xml"
       href="/static/common/img/nordea_pulse.svg"
     />
 
-    <!-- fonts linked on nordea page (inspect element)-->
-   <!--  <link
+    <!-- font linked on nordea page (inspect element).... doesnt work -->
+    <!--  <link
       href="/static/dotxx2017/assets/fonts/NordeaSansLarge-Medium.woff2?v=3.77.6"
       rel="preload"
       as="font"
@@ -21,102 +21,78 @@
     /> -->
 
     <!-- https://www.onlinewebfonts.com/download/769bcbdcfa75bb684c6b18613147d89b -->
-    <link href="https://db.onlinewebfonts.com/c/769bcbdcfa75bb684c6b18613147d89b?family=Nordea+Sans+Large+Medium" rel="stylesheet">
+    <link
+      href="https://db.onlinewebfonts.com/c/769bcbdcfa75bb684c6b18613147d89b?family=Nordea+Sans+Large+Medium"
+      rel="stylesheet"
+    />
 
-    <!-- hittar ingen Regular -->
-   <!--  <link
-      href="/static/dotxx2017/assets/fonts/NordeaSansLarge-Regular.woff2?v=3.77.6"
-      rel="preload"
-      as="font"
-      crossorigin=""
-    /> -->
-    
-    <!-- <link
-      href="/static/dotxx2017/assets/fonts/NordeaSansSmall-Medium.woff2?v=3.77.6"
-      rel="preload"
-      as="font"
-      crossorigin=""
-    /> -->
-
-   <!--  <link
-      href="/static/dotxx2017/assets/fonts/NordeaSansSmall-Regular.woff2?v=3.77.6"
-      rel="preload"
-      as="font"
-      crossorigin=""
-    /> -->
     <!-- https://www.onlinewebfonts.com/download/22bbdd53424bef8a0c11fde5ed420f5f -->
-    <link href="https://db.onlinewebfonts.com/c/22bbdd53424bef8a0c11fde5ed420f5f?family=NordeaSansSmall-Regular" rel="stylesheet">
+    <link
+      href="https://db.onlinewebfonts.com/c/22bbdd53424bef8a0c11fde5ed420f5f?family=NordeaSansSmall-Regular"
+      rel="stylesheet"
+    />
     <title>Nordea formulär</title>
     <!-- trying to replicate NORDEA's form (customer support):
   https://www.nordea.se/privat/kundservice/synpunkter-och-forslag.html 
 
-    Different layout when maximed browser!
-
-  OBS! I will add radio-buttons / checkboxes which is not on this page originally... AND USE GRID to easily place 'Efternamn *' input to the right of 'Namn *' input.
-  AND a username + password box instead of 'Name'
+  OBS! I will add radio-buttons / checkboxes which is not on this page originally... AND USE GRID to easily have two columns in the form.
 -->
-
-
   </head>
   <body>
-    
     <div class="header-top-section">
-     <!--  <div class="header-top"> -->
-        <div class="logo-and-nav-container">
-          <div class="logo-container">
-            <img
-              class="logo-img-header"
-              src="images/nordea-Bank-Logo-screenshot.png"
-              alt=""
-            />
-          </div>
-          <div class="site-redirect-container">
-            <ul class="site-redirect">
-              <li>
-                <div class="blue-line-active-site"></div>
-                <a class="a-active-header-top" href=""> 
-                Privat</a>
-              </li>
-              <li><a href="">Företag</a></li>
-              <li><a href="">Private Banking</a></li>
-            </ul>
-          </div>
-          <button class="button loginButton">Logga in</button>
+      <!--  <div class="header-top"> -->
+      <div class="logo-and-nav-container">
+        <div class="logo-container">
+          <img
+            class="logo-img-header"
+            src="images/nordea-Bank-Logo-screenshot.png"
+            alt=""
+          />
         </div>
-      <!-- </div> -->
+        <div class="site-redirect-container">
+          <ul class="site-redirect">
+            <li>
+              <div class="blue-line-active-site"></div>
+              <a class="a-active-header-top" href=""> Privat</a>
+            </li>
+            <li><a href="">Företag</a></li>
+            <li><a href="">Private Banking</a></li>
+          </ul>
+        </div>
+        <button class="button loginButton">Logga in</button>
+      </div>
     </div>
 
+    <!-- not sure how to make this show below header-top when fully scrolled up... -->
     <div class="header-bottom-sticky">
       <div class="logo-and-nav-container">
-      <div class="site-redirect-container">
-        <ul class="site-redirect">
-          <li><a href="">Ditt liv</a></li>
-          <li><a href="">Våra tjänster</a></li>
-          <li><a class="a-active-sticky" href="">Kundservice</a></li>
-          <li><a href="">Bli kund</a></li>
-        </ul>
+        <div class="site-redirect-container">
+          <ul class="site-redirect">
+            <li><a href="">Ditt liv</a></li>
+            <li><a href="">Våra tjänster</a></li>
+            <li><a class="a-active-sticky" href="">Kundservice</a></li>
+            <li><a href="">Bli kund</a></li>
+          </ul>
+        </div>
+        <button class="button searchButton">Sök</button>
       </div>
-      <button class="button searchButton">Sök</button>
     </div>
-    </div>
-
 
     <main>
       <div class="sidebar">
-        <!-- fixed/sticky in the bottom right? -->
+        <!-- fixed in the bottom right -->
         <a href="">
-          <img src="images/chatta-img.png" alt="">
+          <!-- kinda cheat screenshotting the icon/text... -->
+          <img src="images/chatta-img.png" alt="" />
         </a>
         <a href="">
-          <img src="images/kundservice-img.png" alt="">
+          <img src="images/kundservice-img.png" alt="" />
         </a>
       </div>
 
       <div class="h1-container row">
         <h1>Synpunkter och förslag</h1>
       </div>
-      <!-- padding-left: 1.25rem;
-    padding-right: 1.25rem; -->
 
       <section class="form-section">
         <!-- 'action' where I want to send data -->
@@ -133,33 +109,33 @@
                 <p>Använd formuläret för att berätta för oss vad du tycker.</p>
               </div>
               <!--input types: https://www.w3schools.com/html/html_form_input_types.asp -->
-              <div class="firstName">
-                <label for="firstName">Namn *</label><br>
+              <div class="name">
+                <label for="name">Namn *</label><br />
                 <!-- could change type:  type="number" -->
-                <input type="text" name="firstName" id="firstName" required/>
+                <input type="text" name="name" id="name" required />
                 <!-- connected input and label with 'for' and 'id'. 'name' is sent with POST-->
               </div>
               <div class="teleNr">
-                <label for="teleNr">Mobilnr. *</label><br>
-                <input type="text" name="teleNr" id="teleNr" required/>
+                <label for="teleNr">Mobilnr. *</label><br />
+                <input type="text" name="teleNr" id="teleNr" required />
               </div>
               <div class="username">
-                <label for="username">Användarnamn (email) *</label><br>
-                <input type="text" name="username" id="username" required>
+                <label for="username">Användarnamn (email) *</label><br />
+                <input type="text" name="username" id="username" required />
               </div>
               <div class="password">
                 <label for="password">Lösenord *</label>
                 <!-- type="password" creates dots when typing! -->
-                <input type="password" name="password" id="password" required>
+                <input type="password" name="password" id="password" required />
               </div>
               <div class="category">
                 <label for="categorySelect">Välj ditt kategori *</label>
                 <!-- drop-down menu -->
                 <select name="category" id="categorySelect" required>
-                  <option value="">
-                    Vänligen välj ett kategori
+                  <option value="">Vänligen välj ett kategori</option>
+                  <option value="kreditkort-bankkort">
+                    Kreditkort/Bankkort
                   </option>
-                  <option value="kreditkort-bankkort">Kreditkort/Bankkort</option>
                   <option value="nätbanken">Nätbanken</option>
                   <option value="mobilappen">Mobilappen</option>
                   <option value="utlandsbetalningar">Utlandsbetalningar</option>
@@ -168,43 +144,60 @@
               </div>
               <div class="message">
                 <label for="msg">Meddelande *</label>
-                <textarea name="message" id="msg" maxlength="5000" required></textarea>
+                <textarea
+                  name="message"
+                  id="msg"
+                  maxlength="5000"
+                  required
+                ></textarea>
                 <!-- Can use <small> if we want to make it clear that this should be smaller text... but to be honest I just set it to 1rem so I could have just placed a <div> here instead... -->
                 <!-- need javascript for wordcount? -->
                 <small>#/5&nbsp;000</small>
               </div>
-             <!--  <div class="wordCount"></div> -->
+              <!--  <div class="wordCount"></div> -->
 
-              <div class="contact-method">
-                
-                <label for="contact-method-select">Kan vi ringa er på telefon?</label>
-                
+              <div class="phone-call">
+                <label for="phone-call-request"
+                  >Kan vi ringa er på telefon? *</label
+                >
                 <div class="radio-container">
                   <div class="radio-and-checkbox-style">
-                    <label for="jaRadio">Ja</label>
-                    <input type="radio" name="contact-method" id="jaRadio">
+                    <label for="phone-call-yes">Ja</label>
+                    <!-- either 'yes' or 'no' becomes required since they have the same 'name'-->
+                    <input type="radio" name="phone-call" id="phone-call-yes" value="yes" required/>
                   </div>
                   <div class="radio-and-checkbox-style">
-                    <label for="nejRadio">Nej</label>
-                    <input type="radio" name="contact-method" id="nejRadio">
+                    <label for="phone-call-no">Nej</label>
+                    <input type="radio" name="phone-call" id="phone-call-no" value="no"/>
                   </div>
                 </div>
               </div>
 
               <div class="checkboxes">
-                <label for="contact-method-select">Vill du bli kontaktad på SMS eller Mail (eller båda)?</label>
+                <label for="contact-method-select"
+                  >Vill du bli kontaktad på SMS eller Mail (eller båda)?</label
+                >
+                <!-- need JavaScript to check that at least one Checkbox is ticked? -->
                 <div class="checkboxes-container">
                   <div class="radio-and-checkbox-style">
-                    <label for="vehicle1">SMS</label>
-                    <input type="checkbox" id="vehicle1" name="vehicle1" value="Bike">
+                    <label for="sms">SMS</label>
+                    <input
+                      type="checkbox"
+                      id="sms"
+                      name="contact-method(s)"
+                      value="sms"
+                    />
                   </div>
                   <div class="radio-and-checkbox-style">
-                    <label for="vehicle2">Mail</label>
-                    <input type="checkbox" id="vehicle2" name="vehicle2" value="Car">
+                    <label for="mail">Mail</label>
+                    <input
+                      type="checkbox"
+                      id="mail"
+                      name="contact-method(s)"
+                      value="mail"
+                    />
                   </div>
                 </div>
-            <!--     <input type="checkbox" id="vehicle3" name="vehicle3" value="Boat">
-                <label for="vehicle3"> I have a boat</label><br><br> -->
               </div>
 
               <div class="nav-integrity-container">
@@ -220,49 +213,83 @@
           </div>
         </div>
       </section>
-   <!--    display: inline-block;
-    line-height: 100%; -->
 
-    <section class="social-section">
-      <div class="row">
-        <div class="nav-share-items-container">
-          <h2 class="h2-small">Dela</h2>
-          <div class="social-list-icons-container">
-          <ul>
-            <li><a href="">
-              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="Facebook" class="social-sharing__svg"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm2.48 11.8H13v5.37h-2.27V11.8H9.62V10h1.1V8.84c0-1.5.62-2.41 2.4-2.41h1.5v1.82h-.92c-.7 0-.7.27-.7.75v1h1.73Z" fill="#00005e"></path></svg>
-            </a></li>
-            <li>
-              <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-sharing__svg" aria-label="Twitter"><path d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm6.57 9.14a6.64 6.64 0 0 1-.56.63c-.48.45-.48.5-.48.87a8.22 8.22 0 0 1-.53 2.45 7.24 7.24 0 0 1-2.69 3.18 6.88 6.88 0 0 1-5.31.6 6.59 6.59 0 0 1-1.56-.75 2.5 2.5 0 0 1 .67-.06 4.56 4.56 0 0 0 2.16-.61l.44-.26-.5-.17a2.49 2.49 0 0 1-1.5-1.34c0-.19 0-.19.42-.19h.48l-.4-.19a2.54 2.54 0 0 1-1.11-1 3.06 3.06 0 0 1-.3-1.1.86.86 0 0 1 .39.09c.55.2.63.16.3-.19A2.36 2.36 0 0 1 8 8.64l.14-.39.51.51a6.66 6.66 0 0 0 3.85 1.9h.4v-.4A2.34 2.34 0 0 1 14.45 8a2.6 2.6 0 0 1 1.41 0 3.19 3.19 0 0 1 .69.35l.38.37.44-.15a4.71 4.71 0 0 0 .71-.27.53.53 0 0 1 .26-.09 2.39 2.39 0 0 1-.55.87c-.31.37-.25.4.44.16.42-.24.42-.24.34-.1Z" fill="#00005e"></path></svg>
-              </a>
-            </li>
-            <li>
-              <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="social-sharing__svg" aria-label="LinkedIn"><path d="M12 24A12 12 0 1 0 0 12a12 12 0 0 0 12 12Zm.47-12.94a2 2 0 0 1 1.85-1 2.1 2.1 0 0 1 1.67.59 2.15 2.15 0 0 1 .63 1.66v4.27H14.9V12.7c0-.75-.34-1.23-1.12-1.23a1.16 1.16 0 0 0-1.24 1.28v3.87h-1.72V10.2h1.65Zm-3.25 5.52H7.5V10.2h1.72Zm-.07-7.79a.92.92 0 0 1-1.59 0 .92.92 0 1 1 1.59 0Z" fill="#00005e"></path></svg>
-              </a>
-            </li>
-            <li class="li-mail-item">
-              <a href="">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-label="E-post" class="social-sharing__svg"><path d="M12 24A12 12 0 1 0 0 12a12 12 0 0 0 12 12Zm5.36-17.25A1.67 1.67 0 0 1 19 8.44v7.13a1.66 1.66 0 0 1-1.64 1.68H6.64A1.67 1.67 0 0 1 5 15.56V8.44a1.64 1.64 0 0 1 .47-1.19 1.67 1.67 0 0 1 1.18-.5Zm0 1.17H6.65a.48.48 0 0 0-.36.16.53.53 0 0 0-.12.37v7.11a.52.52 0 0 0 .15.38.43.43 0 0 0 .32.14h10.72a.49.49 0 0 0 .47-.52V8.44a.52.52 0 0 0-.15-.38.43.43 0 0 0-.32-.14Zm-.87.93a.27.27 0 0 1 .29 0 .29.29 0 0 1 .18.23.33.33 0 0 1-.12.27l-4.67 3.5a.35.35 0 0 1-.17.06.3.3 0 0 1-.18-.06L7.16 9.32a.29.29 0 1 1 .35-.47L12 12.22Z" fill="#00005e"></path></svg>
-              </a>
-            </li>
-          </ul>
+      <section class="social-section">
+        <div class="row">
+          <div class="nav-share-items-container">
+            <h2 class="h2-small">Dela</h2>
+            <div class="social-list-icons-container">
+              <ul>
+                <li>
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-label="Facebook"
+                      class="social-sharing__svg"
+                    >
+                      <path
+                        d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm2.48 11.8H13v5.37h-2.27V11.8H9.62V10h1.1V8.84c0-1.5.62-2.41 2.4-2.41h1.5v1.82h-.92c-.7 0-.7.27-.7.75v1h1.73Z"
+                        fill="#00005e"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="social-sharing__svg"
+                      aria-label="Twitter"
+                    >
+                      <path
+                        d="M12 0a12 12 0 1 0 12 12A12 12 0 0 0 12 0Zm6.57 9.14a6.64 6.64 0 0 1-.56.63c-.48.45-.48.5-.48.87a8.22 8.22 0 0 1-.53 2.45 7.24 7.24 0 0 1-2.69 3.18 6.88 6.88 0 0 1-5.31.6 6.59 6.59 0 0 1-1.56-.75 2.5 2.5 0 0 1 .67-.06 4.56 4.56 0 0 0 2.16-.61l.44-.26-.5-.17a2.49 2.49 0 0 1-1.5-1.34c0-.19 0-.19.42-.19h.48l-.4-.19a2.54 2.54 0 0 1-1.11-1 3.06 3.06 0 0 1-.3-1.1.86.86 0 0 1 .39.09c.55.2.63.16.3-.19A2.36 2.36 0 0 1 8 8.64l.14-.39.51.51a6.66 6.66 0 0 0 3.85 1.9h.4v-.4A2.34 2.34 0 0 1 14.45 8a2.6 2.6 0 0 1 1.41 0 3.19 3.19 0 0 1 .69.35l.38.37.44-.15a4.71 4.71 0 0 0 .71-.27.53.53 0 0 1 .26-.09 2.39 2.39 0 0 1-.55.87c-.31.37-.25.4.44.16.42-.24.42-.24.34-.1Z"
+                        fill="#00005e"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li>
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      class="social-sharing__svg"
+                      aria-label="LinkedIn"
+                    >
+                      <path
+                        d="M12 24A12 12 0 1 0 0 12a12 12 0 0 0 12 12Zm.47-12.94a2 2 0 0 1 1.85-1 2.1 2.1 0 0 1 1.67.59 2.15 2.15 0 0 1 .63 1.66v4.27H14.9V12.7c0-.75-.34-1.23-1.12-1.23a1.16 1.16 0 0 0-1.24 1.28v3.87h-1.72V10.2h1.65Zm-3.25 5.52H7.5V10.2h1.72Zm-.07-7.79a.92.92 0 0 1-1.59 0 .92.92 0 1 1 1.59 0Z"
+                        fill="#00005e"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+                <li class="li-mail-item">
+                  <a href="">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      aria-label="E-post"
+                      class="social-sharing__svg"
+                    >
+                      <path
+                        d="M12 24A12 12 0 1 0 0 12a12 12 0 0 0 12 12Zm5.36-17.25A1.67 1.67 0 0 1 19 8.44v7.13a1.66 1.66 0 0 1-1.64 1.68H6.64A1.67 1.67 0 0 1 5 15.56V8.44a1.64 1.64 0 0 1 .47-1.19 1.67 1.67 0 0 1 1.18-.5Zm0 1.17H6.65a.48.48 0 0 0-.36.16.53.53 0 0 0-.12.37v7.11a.52.52 0 0 0 .15.38.43.43 0 0 0 .32.14h10.72a.49.49 0 0 0 .47-.52V8.44a.52.52 0 0 0-.15-.38.43.43 0 0 0-.32-.14Zm-.87.93a.27.27 0 0 1 .29 0 .29.29 0 0 1 .18.23.33.33 0 0 1-.12.27l-4.67 3.5a.35.35 0 0 1-.17.06.3.3 0 0 1-.18-.06L7.16 9.32a.29.29 0 1 1 .35-.47L12 12.22Z"
+                        fill="#00005e"
+                      ></path>
+                    </svg>
+                  </a>
+                </li>
+              </ul>
+            </div>
+          </div>
         </div>
-        </div>
-      </div>
-    </section>
-      
+      </section>
     </main>
 
     <footer class="footer-section">
-      <section class="nav-section">
-        a
-      </section>
-      <section class="meta-section">
-        a
-      </section>
+      <section class="nav-section"></section>
+      <section class="meta-section"></section>
     </footer>
-
   </body>
 </html>

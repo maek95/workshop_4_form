@@ -3,11 +3,10 @@
   padding: 0;
 }
 
-/* learned a lot usign 'inspect element' on the page I was replicating! */ 
+/* learned a lot using 'inspect element' on the page I was replicating! */ 
 
 html {
-  font-size: 16px; /* what rem will be based! 1.0 rem is 100% (16px)... em is based on its immediate parent...? */
-  
+  font-size: 16px; /* what rem will be based! 1.0 rem is 100% (16px)... */
 }
 
 body {
@@ -31,11 +30,10 @@ main {
   box-sizing: border-box;
   /* min-width: 16rem; */
   min-width: 31.25rem;
-
 }
 
 p {
-  font-size: 16px;
+  font-size: 16px; /* '1rem' same thing? */
 }
 
 h1 {
@@ -44,7 +42,7 @@ h1 {
 /*   font-family: NordeaSansLarge,NordeaSansSmall,Arial,Helvetica Neue,Helvetica,sans-serif; */
   /* Nordea Sans Large Medium will be used, others are backups*/
   font-family: "Nordea Sans Large Medium","NordeaSansSmall-Regular",Arial,Helvetica Neue,Helvetica,sans-serif;
-  /* NORDEA website sets font-weight to bold, but they use Nordea Sans Large Regular which I cant find! */
+  /* NORDEA website sets font-weight to bold, but they use Nordea Sans Large Regular which I cant find.... so I set font-weight: normal. */
   font-weight: normal;
 }
 
@@ -86,7 +84,6 @@ li {
 }
 
 .header-top-section {
-  /* background-color: lightpink; */
   background-color: #00005e;
   display: block;
   /* height: 6.75rem; */
@@ -107,7 +104,6 @@ li {
 }
  */
 .logo-and-nav-container {
-  /* background-color: lightseagreen; */
   max-width: 71.25rem;
   margin-left: auto;
   margin-right: auto;
@@ -121,12 +117,11 @@ li {
   display: flex; /* can center image on small screens (see @media) */
   padding: 0 1.25rem;
   height: 3.375rem;
-  /* background-color: lightslategray; */
 }
 
 .logo-img-header {
   /* width: 7rem; */
-  height: 100%;
+  height: 100%; 
 }
 
 .site-redirect-container {
@@ -149,8 +144,8 @@ li > a {
   padding: 0 1rem;
   color: #fcfcfc;
 
-  /* Use this and we can remove code in .site-redirect: 'justify-content: center' and 'align-items: center' 
-  And display: flex in .site-redirect-container. HOWEVER, when screen is small text will wrap 3.375rem down!*/
+  /* Use 'line-height' here and we can remove 'justify-content: center' and 'align-items: center' in .site-redirect. 
+  And display: flex in .site-redirect-container. HOWEVER, when screen is small the text will wrap 3.375rem down... not good... */
   /* line-height: 3.375rem; 
   /* same measurement as header-top-section!*/
 }
@@ -210,8 +205,7 @@ li {
   width: 100%;
  /*  min-width: 16rem; */
   min-width: 31.25rem;
-
-
+  
   position: sticky; 
   top: 0;
 /*   position: sticky; */
@@ -247,13 +241,10 @@ li {
 
 .form-section {
  /*  display: block; */
- /*  background-color: lightgreen; */
 }
 
 .form-container {
-  /* background-color: lightslategray; */
-  /* width: 66.66667%; /* of form-section which is capped at 71.25rem*/
-  width: 75%;
+  width: 75%; /* of .row */
   display: flex;
   align-items: start;
   justify-content: start;
@@ -267,15 +258,11 @@ li {
 }
 
 .form-container form {
-  /* display: block; */
-/*   display: grid;
-  grid-template-columns: 48% 48%; 
-  gap: 15px;  */
-  
+
 }
 
 .form {
-  width: 100%;
+  width: 100%; /* of form-container */
   display: grid;
   /* grid-template-columns: 48% 48%; /* to give space for gap..?*/
   grid-template-columns: minmax(7rem, 48%) minmax(7rem, 48%);
@@ -287,11 +274,10 @@ li {
 /*   background-color: yellowgreen; */
   /* grid-column-start: 1;
   grid-column-end: 3; */
-
   grid-column: span 2; /* does the same as above */
 }
 
-.firstName {
+.name {
   grid-column: 1;
   
 
@@ -342,7 +328,7 @@ input [type="radio"] {
   height: 10px; */
 }
 
-.contact-method, .checkboxes {
+.phone-call, .checkboxes {
  /*  grid-column: 1 / span 2; */
   /* flex-direction: column; */
   display: flex;
@@ -370,9 +356,7 @@ input [type="radio"] {
 .radio-and-checkbox-style {
   display: grid;
   grid-template-columns: 1fr 0fr; /* button in the right column will take up as much space it requires */
-    
  /*  gap: 30px; */
-  
 }
 
 .radio-and-checkbox-style label {
@@ -395,7 +379,6 @@ small {
   /* background-color: lightseagreen; */
  /* float: right; /* doesnt work with grid? */
   grid-column: 2;
-
   display: flex;
   justify-content: end; /* same as float: right; */
 
@@ -448,7 +431,7 @@ small {
 }
 
 .social-list-icons-container {
-  background-color: #f4f2f1;
+  background-color: #fcfcfc;
  /*  display: flex; */
  /*  flex-direction: row; */
   display: flex;
@@ -467,8 +450,9 @@ small {
   padding: 0;  
 }
 
+/* I want a gap between the icons but didnt work without placing a gap to the far-right as well... */
 .nav-share-items-container li {
-  /* margin-right: 6px; /* there is a margin on the right-most side which I can't remove... */
+  /* margin-right: 6px; */
 }
 
 .li-mail-item {
@@ -480,7 +464,6 @@ small {
   align-items: center;
   height: 1.5rem;
   width: 1.5rem;
-  
  /*  overflow: hidden; */
   /* vertical-align: middle; */
 }
@@ -495,7 +478,7 @@ small {
 
 .sidebar {
   display: flex;
-  background-color: #dfedfc;
+  background-color: #dcedff;
   z-index: 51;
   position: fixed;
   bottom: 0;
@@ -522,8 +505,10 @@ small {
 footer {
  /*  clear: both; */
   background: #00005e;
-  height: 100%;
+  height: 6.75rem;  /* double that of .header-top-section */ 
 }
+
+/* I HAVE USED MAX-WIDTH (not min-width)... i.e. NOT mobile first!*/
 
 @media (max-width: 600px ) {
   li > a {
@@ -534,8 +519,7 @@ footer {
   }
 }
 
-/*  https://www.w3schools.com/tags/ref_pxtoemconversion.asp */
-@media (max-width: 640px) { /* 40em * 16 = 640*/
+@media (max-width: 640px) { /* 40em (rem?) * 16 = 640*/
   .form-container {
    /*  width: 83.33333%; */
    width: 90%;
